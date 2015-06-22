@@ -108,10 +108,10 @@ describe UpdateUser do
   let(:error) { { error: 'ERROR' } }
   let(:params) { { last_name: 'Turner' } }
 
+  let(:controller) { MockController.new }
+
   context 'success' do
     before { TzuMock.success(UpdateUser, result) }
-
-    let(:controller) { MockController.new }
 
     it 'mocks a successful outcome and allows parameters to be verified' do
       controller.update(params)
@@ -123,8 +123,6 @@ describe UpdateUser do
   context 'invalid' do
     before { TzuMock.invalid(UpdateUser, error) }
 
-    let(:controller) { MockController.new }
-
     it 'mocks a successful outcome and allows parameters to be verified' do
       controller.update(params)
       expect(UpdateUser).to have_received(:run).with(params)
@@ -134,8 +132,6 @@ describe UpdateUser do
 
   context 'failure' do
     before { TzuMock.failure(UpdateUser, error) }
-
-    let(:controller) { MockController.new }
 
     it 'mocks a successful outcome and allows parameters to be verified' do
       controller.update(params)
