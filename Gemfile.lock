@@ -1,0 +1,39 @@
+PATH
+  remote: .
+  specs:
+    tzu_mock (1.0.0)
+      binding_of_caller (~> 0.7.3.pre1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    binding_of_caller (0.7.3.pre1)
+      debug_inspector (>= 0.0.1)
+    byebug (5.0.0)
+      columnize (= 0.9.0)
+    columnize (0.9.0)
+    debug_inspector (0.0.2)
+    diff-lcs (1.2.5)
+    rspec (3.2.0)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+    rspec-core (3.2.3)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.2)
+    tzu (0.0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  byebug
+  rspec (>= 2.4.0)
+  tzu (~> 0.0.1.0)
+  tzu_mock!
