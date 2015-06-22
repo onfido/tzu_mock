@@ -4,6 +4,12 @@ A very simple library for mocking Tzu in RSpec
 
 ## Usage
 
+```
+TzuMock.success(klass, result) #=> Successful Outcome
+TzuMock.invalid(klass, error) #=> Invalid Outcome
+TzuMock.failure(klass, error) #=> Failed Outcome
+```
+
 Consider this Tzu command:
 
 ```ruby
