@@ -3,10 +3,10 @@ require 'orm_adapter/version'
 
 Gem::Specification.new do |s|
   s.name = 'tzu_mock'
-  s.version = '1.0.0'
+  s.version = '0.1.0'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Blake Turner']
-  s.description = 'Simple library for mocking Tzu in Rspec'
+  s.description = 'Simple library for mocking Tzu in RSpec'
   s.summary = 'TDD with Tzu!'
   s.email = 'mail@blakewilliamturner.com'
   s.homepage = 'https://github.com/onfido/tzu_mock'
