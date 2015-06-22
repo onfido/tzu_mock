@@ -67,7 +67,7 @@ describe UpdateUser do
       expect(outcome.success?).to be true
       expect(outcome.result).to eq result
       expect(outcome.type).to be nil
-      expect(UpdateUser).to have_received(:run!).with(params)
+      expect(UpdateUser).to have_received(:run).with(params)
     end
   end
 
@@ -80,7 +80,7 @@ describe UpdateUser do
       expect(outcome.success?).to be false
       expect(outcome.result).to eq error
       expect(outcome.type).to eq :validation
-      expect(UpdateUser).to have_received(:run!).with(params)
+      expect(UpdateUser).to have_received(:run).with(params)
     end
   end
 
