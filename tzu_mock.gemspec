@@ -3,7 +3,7 @@ require 'orm_adapter/version'
 
 Gem::Specification.new do |s|
   s.name = 'tzu_mock'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Blake Turner']
   s.description = 'Simple library for mocking Tzu in RSpec'
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.test_files    = Dir.glob("{spec}/**/*")
   s.require_paths = ['lib']
 
-  s.add_runtime_dependency 'binding_of_caller', '~> 0.7.3.pre1'
+  s.add_runtime_dependency 'binding_of_caller', '>= 0.7'
 
   s.add_development_dependency 'tzu', '~> 0.0.1.0'
   s.add_development_dependency 'rspec', '>= 2.4.0'

@@ -34,6 +34,26 @@ describe TzuMock do
     end
   end
 
+  context 'configuration' do
+    context 'when no stub methods have been added' do
+      it 'configures the default stub methods' do
+        expect(TzuMock.configuration.stub_methods).to eq TzuMock::Config::DEFAULT_MOCK_METHODS
+      end
+    end
+
+    context 'when stub methods have been added' do
+      let(:stub_methods) { [:go, :go!] }
+
+      before do
+        TzuMock.configure { |config| config.stub_methods = stub_methods }
+      end
+
+      it 'appends the configured methods to the default stub methods' do
+        expect(TzuMock.configuration.stub_methods.sort).to eq (TzuMock::Config::DEFAULT_MOCK_METHODS + stub_methods).sort
+      end
+    end
+  end
+
   context 'when invocation does not have a block' do
     context 'success' do
       before { TzuMock.success(UpdateUser, result) }
