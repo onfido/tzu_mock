@@ -148,7 +148,7 @@ TzuMock effortlessly passes your desired outcome to the appropriate block.
 
 By default, TzuMock stubs the `run` and `run!` methods, but you can configure more methods if you choose.
 
-```
+```ruby
 # spec/spec_helper.rb
 TzuMock.configure { |config| config.stub_methods = [:go, :go!] }
 ```
