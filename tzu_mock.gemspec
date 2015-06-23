@@ -3,7 +3,7 @@ require 'orm_adapter/version'
 
 Gem::Specification.new do |s|
   s.name = 'tzu_mock'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Blake Turner']
   s.description = 'Simple library for mocking Tzu in RSpec'
