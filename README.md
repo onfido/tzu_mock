@@ -5,9 +5,9 @@ A very simple library for mocking Tzu in RSpec
 ## Usage
 
 ```ruby
-TzuMock.success(klass, result) #=> Successful Outcome
-TzuMock.invalid(klass, error) #=> Invalid Outcome
-TzuMock.failure(klass, error) #=> Failed Outcome
+TzuMock.success(klass).returns(result) #=> Successful Outcome
+TzuMock.invalid(klass).returns(error) #=> Invalid Outcome
+TzuMock.failure(klass).returns(error) #=> Failed Outcome
 ```
 
 Consider this Tzu command:
@@ -59,7 +59,7 @@ describe UpdateUser do
   let(:params) { { last_name: 'Turner' } }
 
   context 'success' do
-    before { TzuMock.success(UpdateUser, result) }
+    before { TzuMock.success(UpdateUser).returns(result) }
 
     let(:outcome) { UpdateUser.run(params) }
 
@@ -72,7 +72,7 @@ describe UpdateUser do
   end
 
   context 'invalid' do
-    before { TzuMock.invalid(UpdateUser, error) }
+    before { TzuMock.invalid(UpdateUser).returns(error) }
 
     let(:outcome) { UpdateUser.run(params) }
 
@@ -85,7 +85,7 @@ describe UpdateUser do
   end
 
   context 'failure' do
-    before { TzuMock.failure(UpdateUser, error) }
+    before { TzuMock.failure(UpdateUser).returns(error) }
 
     let(:outcome) { UpdateUser.run!(params) }
 
@@ -111,7 +111,7 @@ describe UpdateUser do
   let(:controller) { MockController.new }
 
   context 'success' do
-    before { TzuMock.success(UpdateUser, result) }
+    before { TzuMock.success(UpdateUser).returns(result) }
 
     it 'mocks a successful outcome and allows parameters to be verified' do
       controller.update(params)
@@ -121,7 +121,7 @@ describe UpdateUser do
   end
 
   context 'invalid' do
-    before { TzuMock.invalid(UpdateUser, error) }
+    before { TzuMock.invalid(UpdateUser).returns(error) }
 
     it 'mocks a successful outcome and allows parameters to be verified' do
       controller.update(params)
@@ -131,7 +131,7 @@ describe UpdateUser do
   end
 
   context 'failure' do
-    before { TzuMock.failure(UpdateUser, error) }
+    before { TzuMock.failure(UpdateUser).returns(error) }
 
     it 'mocks a successful outcome and allows parameters to be verified' do
       controller.update(params)
@@ -146,7 +146,7 @@ TzuMock effortlessly passes your desired outcome to the appropriate block.
 
 ## Configuration
 
-By default, TzuMock mocks the `run` and `run!` methods, 
+By default, TzuMock mocks the `run` and `run!` methods,
 but you can add more methods to that list if your Tzu classes have another interface.
 
 ```ruby

@@ -56,7 +56,7 @@ describe TzuMock do
 
   context 'when invocation does not have a block' do
     context 'success' do
-      before { TzuMock.success(UpdateUser, result) }
+      before { TzuMock.success(UpdateUser).returns(result) }
 
       let(:outcome) { UpdateUser.run!(params) }
 
@@ -69,7 +69,7 @@ describe TzuMock do
     end
 
     context 'invalid' do
-      before { TzuMock.invalid(UpdateUser, error) }
+      before { TzuMock.invalid(UpdateUser).returns(error) }
 
       let(:outcome) { UpdateUser.run!(params) }
 
@@ -82,7 +82,7 @@ describe TzuMock do
     end
 
     context 'failure' do
-      before { TzuMock.failure(UpdateUser, error) }
+      before { TzuMock.failure(UpdateUser).returns(error) }
 
       let(:outcome) { UpdateUser.run(params) }
 
@@ -97,7 +97,7 @@ describe TzuMock do
 
   context 'when invocation has a block' do
     context 'success' do
-      before { TzuMock.success(UpdateUser, result) }
+      before { TzuMock.success(UpdateUser).returns(result) }
 
       let(:controller) { MockController.new }
 
@@ -109,7 +109,7 @@ describe TzuMock do
     end
 
     context 'invalid' do
-      before { TzuMock.invalid(UpdateUser, error) }
+      before { TzuMock.invalid(UpdateUser).returns(error) }
 
       let(:controller) { MockController.new }
 
@@ -121,7 +121,7 @@ describe TzuMock do
     end
 
     context 'failure' do
-      before { TzuMock.failure(UpdateUser, error) }
+      before { TzuMock.failure(UpdateUser).returns(error) }
 
       let(:controller) { MockController.new }
 

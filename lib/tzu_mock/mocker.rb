@@ -1,11 +1,16 @@
 module TzuMock
   class Mocker
-    def initialize(type, klass, result, rspec_context, method)
-      @type, @klass, @result, @rspec_context, @method = type, klass, result, rspec_context, method
+    def initialize(type, klass, rspec_context, method)
+      @type, @klass, @rspec_context, @method = type, klass, rspec_context, method
     end
 
     def mock
       @rspec_context.instance_eval(&mock_proc(@klass, mock_methods, success?, @result, error_type))
+    end
+
+    def returns(result)
+      @result = result
+      mock
     end
 
     private
