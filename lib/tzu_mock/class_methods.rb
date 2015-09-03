@@ -10,7 +10,7 @@ module TzuMock
       # Call TzuMock#success, TzuMock#invalid, or TzuMock#failure instead
       rspec_context = binding.of_caller(2).eval('self')
 
-      Mocker.new(type, klass, rspec_context, method)
+      Mocker.new(type, klass, rspec_context, method).mock
     end
   end
 end

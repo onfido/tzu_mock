@@ -132,4 +132,42 @@ describe TzuMock do
       end
     end
   end
+
+  context 'TzuMock receive no return result' do
+    context 'success' do
+      before { TzuMock.success(UpdateUser) }
+
+      let(:outcome) { UpdateUser.run!(params) }
+
+      it 'mocks a successful outcome and allows parameters to be verified' do
+        expect(outcome.success?).to be true
+        expect(outcome.type).to be nil
+        expect(UpdateUser).to have_received(:run!).with(params)
+      end
+    end
+
+    context 'invalid' do
+      before { TzuMock.invalid(UpdateUser) }
+
+      let(:outcome) { UpdateUser.run!(params) }
+
+      it 'mocks an invalid outcome and allows parameters to be verified' do
+        expect(outcome.success?).to be false
+        expect(outcome.type).to eq :validation
+        expect(UpdateUser).to have_received(:run!).with(params)
+      end
+    end
+
+    context 'failure' do
+      before { TzuMock.failure(UpdateUser) }
+
+      let(:outcome) { UpdateUser.run(params) }
+
+      it 'mocks a failed outcome and allows parameters to be verified' do
+        expect(outcome.success?).to be false
+        expect(outcome.type).to eq :execution
+        expect(UpdateUser).to have_received(:run).with(params)
+      end
+    end
+  end
 end
