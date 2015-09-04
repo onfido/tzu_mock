@@ -6,6 +6,7 @@ module TzuMock
 
     def mock
       @rspec_context.instance_eval(&mock_proc(@klass, mock_methods, success?, @result, error_type))
+      self
     end
 
     def returns(result)

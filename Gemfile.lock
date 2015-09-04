@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tzu_mock (0.1.2)
+    tzu_mock (1.0.0)
       binding_of_caller (>= 0.7)
 
 GEM
