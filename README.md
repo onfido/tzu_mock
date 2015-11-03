@@ -1,4 +1,4 @@
-# Tzu Mock
+# Tzu Mock [![Build Status](https://travis-ci.org/onfido/tzu_mock.svg)](https://travis-ci.org/onfido/tzu_mock)
 
 A very simple library for mocking Tzu in RSpec
 
