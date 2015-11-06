@@ -144,6 +144,27 @@ end
 
 TzuMock effortlessly passes your desired outcome to the appropriate block.
 
+## Hash Result
+
+TzuMock converts your result hash attributes into methods by default.
+
+```ruby
+# if you return this result
+before { TzuMock.success(UpdateUser).returns({name: 'me'}) }
+
+# you can access it on this way
+outcome = UpdateUser.run(params)
+outcome.result.name
+
+# even if you have result as array contains hashs
+before { TzuMock.success(UpdateUser).returns([{name: 'me'}]) }
+
+# you can access it on this way
+outcome = UpdateUser.run(params)
+outcome.result.first.name
+
+```
+
 ## Configuration
 
 By default, TzuMock mocks the `run` and `run!` methods,

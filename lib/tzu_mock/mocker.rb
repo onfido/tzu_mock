@@ -10,8 +10,9 @@ module TzuMock
     end
 
     def returns(result)
-      @result = result
+      @result = ResultBuilder.build(result)
       mock
+      self
     end
 
     private

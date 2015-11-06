@@ -54,6 +54,43 @@ describe TzuMock do
     end
   end
 
+  context 'result builder' do
+    let(:outcome) { UpdateUser.run!(params) }
+
+    before { TzuMock.success(UpdateUser).returns(result) }
+
+    context 'hash' do
+      let(:result) { {name: 'me!'} }
+      it 'returns hash attributes as methods' do
+        expect(outcome.result.is_a?(Hash)).to be_truthy
+        expect(outcome.result.name).to eq(result[:name])
+      end
+    end
+    context 'array' do
+      context 'contains hash' do
+        let(:result) { [{name: 'other'}] }
+        it 'responds to name' do
+          expect(outcome.result.first.is_a?(Hash)).to be_truthy
+          expect(outcome.result.first.name).to eq(result.first[:name])
+        end
+      end
+      context 'does not ctonain hash' do
+        let(:result) { ['me'] }
+        it 'responds to name' do
+          expect(outcome.result.first.is_a?(String)).to be_truthy
+          expect(outcome.result).to eq(result)
+        end
+      end
+    end
+    context 'string' do
+      let(:result) { 'me!' }
+      it 'responds to name' do
+        expect(outcome.result.is_a?(String)).to be_truthy
+        expect(outcome.result).to eq(result)
+      end
+    end
+  end
+
   context 'when invocation does not have a block' do
     context 'success' do
       before { TzuMock.success(UpdateUser).returns(result) }
