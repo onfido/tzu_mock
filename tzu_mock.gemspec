@@ -2,7 +2,7 @@ $:.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'tzu_mock'
-  s.version = '0.1.2'
+  s.version = '1.2.0'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Blake Turner']
   s.description = 'Simple library for mocking Tzu in RSpec'
