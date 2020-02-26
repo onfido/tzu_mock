@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_runtime_dependency 'binding_of_caller', '>= 0.7'
-  s.add_runtime_dependency 'hashie', '3.4.0'
+  s.add_runtime_dependency 'hashie', '~> 3.4.0'
 
   s.add_development_dependency 'tzu', '~> 0.0.1'
   s.add_development_dependency 'rspec', '>= 2.4.0'
