@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'tzu'
 
-describe TzuMock do
+RSpec.describe TzuMock do
   let(:result) { 'Desired Result' }
   let(:error) { { error: 'ERROR' } }
   let(:params) { { last_name: 'Turner' } }
