@@ -47,3 +47,6 @@ pkg
 
 # For rubinius:
 #*.rbc
+.rbenv-gemsets
+.ruby-version
+.rspec_status
