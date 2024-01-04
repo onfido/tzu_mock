@@ -1,25 +1,21 @@
-$:.push File.expand_path('../lib', __FILE__)
+require_relative "lib/tzu_mock/version"
 
 Gem::Specification.new do |s|
-  s.name = 'tzu_mock'
-  s.version = '1.3.0'
+  s.name = "tzu_mock"
+  s.version = TzuMock::VERSION
   s.platform = Gem::Platform::RUBY
-  s.authors = ['Blake Turner']
-  s.description = 'Simple library for mocking Tzu in RSpec'
-  s.summary = 'TDD with Tzu!'
-  s.email = 'mail@blakewilliamturner.com'
-  s.homepage = 'https://github.com/onfido/tzu_mock'
-  s.license = 'MIT'
+  s.authors = ["Blake Turner"]
+  s.description = "Simple library for mocking Tzu in RSpec"
+  s.summary = "TDD with Tzu!"
+  s.email = "mail@blakewilliamturner.com"
+  s.homepage = "https://github.com/onfido/tzu_mock"
+  s.license = "MIT"
 
-  s.files         = Dir.glob("{bin,lib}/**/*") + %w(LICENSE.txt README.md)
-  s.test_files    = Dir.glob("{spec}/**/*")
-  s.require_paths = ['lib']
+  s.files = Dir.glob("{bin,lib}/**/*") + %w[LICENSE.txt README.md]
+  s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'binding_of_caller', '>= 0.7'
-  s.add_runtime_dependency 'hashie', '~> 3'
-
-  s.add_development_dependency 'tzu'
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'byebug'
-  s.add_development_dependency 'rake'
+  s.add_dependency "binding_of_caller", ">= 0.7"
+  s.add_dependency "hashie", "~> 3"
+  s.add_dependency "tzu"
+  s.add_dependency "rspec"
 end

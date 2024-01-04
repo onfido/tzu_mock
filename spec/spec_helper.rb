@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'tzu_mock'
+require "tzu_mock"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

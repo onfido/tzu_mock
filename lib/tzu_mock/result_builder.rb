@@ -1,4 +1,4 @@
-require 'hashie'
+require "hashie"
 
 module TzuMock
   class HashResult < Hash
@@ -27,7 +27,7 @@ module TzuMock
       end
 
       def build_array(result)
-        result.map { |r| r.is_a?(Hash) ? build_hash(r) : r}
+        result.map { |r| r.is_a?(Hash) ? build_hash(r) : r }
       end
     end
   end
