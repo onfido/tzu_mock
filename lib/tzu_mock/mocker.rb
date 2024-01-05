@@ -19,7 +19,7 @@ module TzuMock
 
     # Need to pass variables in explicity to give the Proc access to them
     def mock_proc(klass, methods, success, result, type)
-      Proc.new do
+      proc do
         methods.each do |method|
           allow(klass).to receive(method) do |&block|
             outcome = Tzu::Outcome.new(success, result, type)
@@ -48,7 +48,7 @@ module TzuMock
       when :failure
         :execution
       else
-        raise ArgumentError.new('Invalid type, must be :success, :invalid, or :failure')
+        raise ArgumentError.new("Invalid type, must be :success, :invalid, or :failure")
       end
     end
   end
