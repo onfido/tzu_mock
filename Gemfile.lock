@@ -35,7 +35,8 @@ GEM
     regexp_parser (2.8.3)
     reline (0.4.1)
       io-console (~> 0.5)
-    rexml (3.2.6)
+    rexml (3.3.3)
+      strscan
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
@@ -77,6 +78,7 @@ GEM
     standard-performance (1.0.1)
       lint_roller (~> 1.0)
       rubocop-performance (~> 1.16.0)
+    strscan (3.1.0)
     tzu (0.1.2.0)
     unicode-display_width (2.5.0)
 
